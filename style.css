@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+path,
+i,
+svg {
+  pointer-events: none;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  color: rgb(51, 51, 51);
+}
+button {
+  font-family: "Mulish", sans-serif;
+}
+
+.colors {
+  min-height: 80vh;
+  display: flex;
+  color: rgb(212, 212, 212);
+}
+
+.color {
+  height: 80vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  overflow: hidden;
+}
+
+.color h2 {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(63, 63, 63);
+  opacity: 0;
+  padding: 1rem;
+  width: 80%;
+  border-radius: 1rem 1rem 0 0;
+  pointer-events: none;
+  /* we are adding adjustment class */
+  transform: translateY(100px);
+  transition: all 0.5s ease-in-out;
+}
+.sliders.active {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: all;
+}
+.sliders button,
+.close-save,
+.close-library {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 0.5rem;
+  border-radius: 0 1rem 0 1rem;
+  border: none;
+  background: rgb(74, 74, 75);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+  background-color: rgb(224, 238, 237);
+}
+
+.panel button {
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  background: rgb(31, 33, 63);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.panel p {
+  font-size: 1.2rem;
+}
+
+.library-panel,
+.generate-panel,
+.save-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adjust,
+.lock {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 1rem 0rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 0.5rem 0rem;
+  width: 100%;
+  height: 20px;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 1rem;
+  border: 1px solid #fff;
+  box-shadow: inset -1px -1px 2px rgb(107, 106, 106);
+  background-color: rgb(249, 249, 250);
+}
+
+.copy-container,
+.save-container,
+.library-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.copy-popup,
+.save-popup,
+.library-popup {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 1rem;
+  transition: transform 1s ease;
+  transform: translateY(-2rem);
+  min-width: 30%;
+  min-height: 30vh;
+}
+
+.copy-popup h4,
+.save-popup h4,
+.library-popup h4 {
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.copy-container.active,
+.save-container.active,
+.library-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.copy-popup.active,
+.save-popup.active,
+.library-popup.active {
+  transform: translateY(0rem);
+}
+
+.save-name {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: 2px solid rgb(17, 5, 44);
+}
+
+.submit-save {
+  margin: 2rem;
+  padding: 1rem 2rem;
+  background-color: rgb(74, 62, 90);
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.library-popup {
+  min-width: 40%;
+  padding: 1rem;
+  justify-content: flex-start;
+  overflow: scroll;
+  max-height: 50vh;
+}
+
+.custom-palette {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 2rem;
+}
+.small-preview {
+  display: flex;
+  flex: 1;
+}
+.custom-palette h4 {
+  flex: 1;
+}
+
+.small-preview div {
+  height: 3rem;
+  flex: 1;
+}
+
+.pick-palette-btn {
+  border: none;
+  height: 3rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: rgb(238, 234, 234);
+  background: #000;
+}
