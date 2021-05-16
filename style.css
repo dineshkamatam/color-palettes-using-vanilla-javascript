@@ -63,8 +63,7 @@ button {
   pointer-events: all;
 }
 .sliders button,
-.close-save,
-.close-library {
+.close-save {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -244,4 +243,16 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 1.2rem;
   color: rgb(238, 234, 234);
   background: #000;
+}
+.close-library {
+  border-radius: 0 0 0 1rem;
+  border: none;
+  background: rgb(74, 74, 75);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
